@@ -1,4 +1,9 @@
+import NavBar from '../pageObjects/navbar';
+import Login from '../pageObjects/login';
+
 describe('Login', () => {
+    const navbar = new NavBar();
+    const login = new Login();
     const email = 'TwistedClaudia@yahoo.com';
     const password = 'Eminem1984!';
 
@@ -9,19 +14,19 @@ describe('Login', () => {
         })
     });
     it('should open login page', () => {
-        $('.nav-link=Login').click();
-        $('.card-body').waitForDisplayed();
+        navbar.loginLink.click();
+        login.container.waitForDisplayed();
     });
     it('should check if username is filled in', () => {
-        $('#input-1').addValue(email);
-        expect($('#input-1').getValue()).toBe(email);
+        login.emailInput.addValue(email);
+        expect(login.emailInput.getValue()).toBe(email);
     });
     it('should check if password is filled in', () => {
-        $('#input-3').addValue(password);
-        expect($('#input-3').getValue()).toBe(password);
+        login.passwordInput.addValue(password);
+        expect(login.passwordInput.getValue()).toBe(password);
     });
     it('should be able to login', () => {
-        $('.btn-primary').click();
-        $('.nav-link=Add movie').waitForDisplayed();
+        login.loginButton.click();
+        navbar.addMovieLink.waitForDisplayed();
     });
 });
