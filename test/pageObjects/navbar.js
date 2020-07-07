@@ -8,6 +8,9 @@ class NavBar {
     get loginLink () {
         return this.container.$('.nav-link=Login');
     }
+    get registerLink () {
+        return this.container.$('.nav-link=Register');
+    }
     get addMovieLink () {
         return this.container.$('.nav-link=Add movie');
     }
