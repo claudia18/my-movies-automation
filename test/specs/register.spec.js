@@ -1,11 +1,12 @@
 import NavBar from '../pageObjects/navbar';
 import Register from '../pageObjects/register';
+import { generateName } from '../../utils/utils';
 
 describe('Register', () => {
     const register = new Register();
     const navbar = new NavBar();
-    const username = 'dastesttest';
-    const email = 'email2021@yahoo.com';
+    const username = generateName();
+    const email = `${username}@yahoo.com`;
     const password = 'Password!23';
 
     it('should open my movies', () => {
