@@ -14,6 +14,9 @@ class NavBar {
     get addMovieLink () {
         return this.container.$('.nav-link=Add movie');
     }
+    get myMoviesLink () {
+        return this.container.$('.nav-link=My movies');
+    }
 }
 
 export default NavBar;
