@@ -14,6 +14,12 @@ class Login {
     get loginButton () {
         return this.container.$('.btn-primary');
     }
+
+    login(user,password) {
+        this.emailInput.addValue(user);
+        this.passwordInput.addValue(password);
+        this.loginButton.click();
+    }
 }
 
 export default Login;
