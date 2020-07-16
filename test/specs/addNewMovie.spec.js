@@ -17,16 +17,8 @@ describe('Login', () => {
         navbar.loginLink.click();
         login.container.waitForDisplayed();
     });
-    it('should check if username is filled in', () => {
-        login.emailInput.addValue(email);
-        expect(login.emailInput.getValue()).toBe(email);
-    });
-    it('should check if password is filled in', () => {
-        login.passwordInput.addValue(password);
-        expect(login.passwordInput.getValue()).toBe(password);
-    });
     it('should be able to login', () => {
-        login.loginButton.click();
+        login.login(email,password);
         navbar.addMovieLink.waitForDisplayed();
     });
     it('should open My Movies page', () => {
